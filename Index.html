@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Inglês Essencial | Método Direto · Prof. Jonathan Blake</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            background-color: #ffffff;
+            color: #1E2A3E;
+            scroll-behavior: smooth;
+        }
+
+        /* Cores da bandeira EUA em estilo minimalista */
+        :root {
+            --usa-blue: #002868;   /* azul royal forte */
+            --usa-red: #BF0A30;    /* vermelho clássico */
+            --usa-white: #FFFFFF;
+            --gray-100: #F7F9FC;
+            --gray-200: #E9EDF2;
+            --gray-600: #4a5b6e;
+            --gray-900: #1E2A3E;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.05);
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Tipografia refinada */
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--usa-blue);
+        }
+
+        .section-subhead {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 680px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* HEADER / HERO */
+        .hero {
+            background: linear-gradient(110deg, var(--usa-white) 0%, #F0F4FA 100%);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 80px 0 64px 0;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--usa-red);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: var(--usa-blue);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 span {
+            color: var(--usa-red);
+            border-bottom: 3px solid var(--usa-red);
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 1.8rem;
+            max-width: 560px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-900);
+        }
+
+        .stat span:first-child {
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: var(--gray-200);
+            padding: 4px 10px;
+            border-radius: 40px;
+        }
+
+        .hero-visual {
+            flex: 0.8;
+            background: var(--usa-white);
+            border-radius: 32px;
+            box-shadow: var(--shadow-md);
+            padding: 16px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .hero-visual-inner {
+            background: var(--usa-blue);
+            border-radius: 24px;
+            padding: 28px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .flag-stripes {
+            background: repeating-linear-gradient(90deg, var(--usa-red) 0px, var(--usa-red) 12px, white 12px, white 24px);
+            height: 6px;
+            width: 80%;
+            margin: 12px auto;
+            border-radius: 4px;
+        }
+
+        /* cards diferenciais minimalistas */
+        .cards-section {
+            padding: 72px 0;
+            background: var(--gray-100);
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .card-minimal {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 24px;
+            flex: 1;
+            min-width: 240px;
+            max-width: 300px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card-minimal:hover {
+            transform: translateY(-4px);
+            border-color: var(--usa-blue);
+            box-shadow: 0 20px 30px -12px rgba(0,40,104,0.08);
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-minimal h3 {
+            color: var(--usa-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.35rem;
+        }
+
+        .card-minimal p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        /* Seção programa (clean) */
+        .program-modern {
+            padding: 72px 0;
+            background: white;
+        }
+
+        .modules-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .module-card {
+            flex: 1;
+            min-width: 220px;
+            background: var(--gray-100);
+            border-radius: 24px;
+            padding: 28px 20px;
+            border-left: 4px solid var(--usa-red);
+        }
+
+        .module-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--usa-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .module-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .module-card li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: #2c3e44;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .module-card li::before {
+            content: "▹";
+            color: var(--usa-red);
+            font-weight: 600;
+        }
+
+        /* seção professor com foto real e minimalista */
+        .teacher-section {
+            background: var(--gray-100);
+            padding: 72px 0;
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .teacher-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 56px;
+            background: white;
+            border-radius: 32px;
+            padding: 40px 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .teacher-photo-area {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+
+        .teacher-photo-area img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 15px 35px -10px rgba(0,0,0,0.1);
+            border: 3px solid white;
+            outline: 1px solid var(--gray-200);
+        }
+
+        .teacher-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--usa-blue);
+            margin-top: 12px;
+        }
+
+        .teacher-title {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            letter-spacing: 0.3px;
+        }
+
+        .teacher-bio {
+            flex: 1;
+        }
+
+        .teacher-bio p {
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+            font-size: 1rem;
+        }
+
+        .testimonial-mini {
+            background: var(--gray-100);
+            padding: 20px 24px;
+            border-radius: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--usa-red);
+            font-style: normal;
+            font-weight: 500;
+            color: #1e2a3e;
+        }
+
+        /* CTA final */
+        .cta-final {
+            background: var(--usa-blue);
+            padding: 72px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-final h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .price-card {
+            background: rgba(255,255,255,0.08);
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 80px;
+            margin: 20px 0;
+            backdrop-filter: blur(2px);
+            font-weight: 700;
+        }
+
+        .price-card .value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--usa-red);
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 16px 42px;
+            border-radius: 48px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: all 0.2s;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            border: none;
+        }
+
+        .btn-cta:hover {
+            background: #9e0824;
+            transform: scale(1.02);
+        }
+
+        .urgency-text {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: var(--gray-900);
+            color: #adb7c4;
+            padding: 32px 0;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: var(--gray-200);
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            .hero-grid {
+                flex-direction: column;
+            }
+            .teacher-wrapper {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 24px;
+            }
+            .teacher-bio {
+                text-align: left;
+            }
+            .testimonial-mini {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO minimalista com referência EUA (azul + vermelho) -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">🇺🇸 METODOLOGIA DIRETA</div>
+                    <h1>Do básico à conversação real em <span>30 dias</span></h1>
+                    <p>Comunique-se com confiança em inglês. Aulas ao vivo, turmas reduzidas e foco no que funciona: prática desde o primeiro encontro.</p>
+                    <div class="hero-stats">
+                        <div class="stat"><span>🎯 +350</span> alunos ativos</div>
+                        <div class="stat"><span>⭐ 4.98</span> avaliação média</div>
+                        <div class="stat"><span>🌍 100%</span> online</div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-visual-inner">
+                        <div style="font-size: 2rem;">🗽</div>
+                        <div style="font-weight: 500; margin: 12px 0;">Freedom to Speak</div>
+                        <div class="flag-stripes"></div>
+                        <div style="font-size: 0.8rem; opacity: 0.9;">Aulas ao vivo · máximo 6 alunos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARDS diferenciais (branco + azul/vermelho elegante) -->
+    <section class="cards-section">
+        <div class="container">
+            <h2 style="text-align: center;">Por que este curso é diferente</h2>
+            <p class="section-subhead" style="text-align: center;">Sem enrolação, sem métodos vencidos. Você fala inglês sem medo de errar.</p>
+            <div class="cards-grid">
+                <div class="card-minimal">
+                    <div class="card-icon">🎙️</div>
+                    <h3>Fala desde o dia 1</h3>
+                    <p>Atividades conversacionais reais, vocabulário situacional para você ganhar fluência sem travar.</p>
+                </div>
+                <div class="card-minimal">
+                    <div class="card-icon">👥</div>
+                    <h3>Turmas premium (6 vagas)</h3>
+                    <p>Atenção individualizada, correção na hora e vínculo de confiança com o professor.</p>
+                </div>
+                <div class="card-minimal">
+                    <div class="card-icon">⚡</div>
+                    <h3>Inglês prático e moderno</h3>
+                    <p>Expressões usadas nos EUA e no mundo, preparação para viagens, trabalho e networking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMA 4 módulos (clean, detalhado) -->
+    <section class="program-modern">
+        <div class="container">
+            <h2 style="text-align: center;">Jornada de 30 dias</h2>
+            <p class="section-subhead" style="text-align: center;">Currículo direto ao ponto, estruturado em 4 pilares que realmente importam.</p>
+            <div class="modules-flex">
+                <div class="module-card">
+                    <h3>📘 01 · Primeiras conversas</h3>
+                    <ul>
+                        <li>Apresentação profissional e casual</li>
+                        <li>Verbos essenciais (to be, have, do)</li>
+                        <li>Números, dias, meses e nacionalidades</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <h3>📙 02 · Rotina & ação</h3>
+                    <ul>
+                        <li>Present simple: hábitos e trabalho</li>
+                        <li>Preposições de lugar e direções</li>
+                        <li>Pedidos em restaurantes & compras</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <h3>📕 03 · Momento e lembranças</h3>
+                    <ul>
+                        <li>Present continuous: agora mesmo</li>
+                        <li>Passado simples (verbos regulares/irreg.)</li>
+                        <li>Contar experiências e viagens</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <h3>📗 04 · Planos e conexão</h3>
+                    <ul>
+                        <li>Futuro com Going to e Will</li>
+                        <li>Comparativos e adjetivos úteis</li>
+                        <li>Projeto final: entrevista pessoal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SEÇÃO DO PROFESSOR PROFISSIONAL (COM FOTO REAL / USA STYLE) ============ -->
+    <section class="teacher-section">
+        <div class="container">
+            <div class="teacher-wrapper">
+                <div class="teacher-photo-area">
+                    <!-- 
+                        ⚡ COMO TROCAR A FOTO ⚡
+                        substitua o "src" atual pelo caminho da sua imagem.
+                        Exemplo: "meu-perfil.jpg" (arquivo na mesma pasta)
+                        ou link direto. O estilo mantém proporção circular minimalista.
+                        Recomendo foto profissional com fundo neutro ou sorriso.
+                    -->
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23002868'/%3E%3Ccircle cx='100' cy='85' r='38' fill='%23E9EDF2'/%3E%3Cpath d='M55 170 L145 170 Q150 120 100 115 Q50 120 55 170' fill='%23E9EDF2'/%3E%3Ctext x='100' y='190' text-anchor='middle' fill='%23ffffff' font-size='12' font-family='monospace'%3EPROFESSOR%3C/text%3E%3C/svg%3E"
+                         alt="Professor Jonathan Blake"
+                         style="background: #f0f2f5;">
+                    <div class="teacher-name">Jonathan Blake</div>
+                    <div class="teacher-title">CELTA Certified · 9 anos experiência</div>
+                </div>
+                <div class="teacher-bio">
+                    <p>Mais de 700 alunos já destravaram o inglês com meu método comunicativo. Esqueça tradução literal e decoreba: aqui você <strong>aprende a pensar em inglês</strong> desde a primeira semana.</p>
+                    <p>Minhas aulas são dinâmicas, sem julgamento e com interseção cultural EUA-Brasil. Você vai sair do zero absoluto para conseguir se virar em viagens, reuniões online e até small talk com nativos.</p>
+                    <div class="testimonial-mini">
+                        “Com o Jonathan, perdi o medo de errar. Em menos de um mês já conseguia pedir meu café e dar opiniões básicas. O ambiente é leve e muito profissional.” — Mariana S.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAL FINAL & PREÇO com cores americanas modernas -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Acesso imediato · Liberdade em inglês</h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 16px auto;">Curso completo com aulas ao vivo, material digital, grupo exclusivo e suporte direto.</p>
+            <div class="price-card">
+                <span class="value">R$ 149,90</span> <span style="font-size: 1rem;">/ mês</span>
+            </div>
+            <p style="margin: 8px 0 16px 0;">🕊️ <strong>Sem taxas escondidas</strong> · Aula experimental gratuita</p>
+            <!-- Link WhatsApp configurável -->
+            <a href="https://wa.me/15551234567?text=Olá! Quero minha aula experimental gratuita de inglês." class="btn-cta" target="_blank">
+                💬 Quero minha aula grátis → 
+            </a>
+            <div class="urgency-text">
+                ⚡ Turmas limitadas (máx 6 alunos) para manter a qualidade. Próxima turma: início imediato.
+            </div>
+        </div>
+    </section>
+  
+    <footer>
+        <div class="container">
+            <p>© 2025 · Inglês Essencial | Método Direto | Professor Jonathan Blake</p>
+            <p style="margin-top: 8px;"><a href="#" style="color:#adb7c4;">Política de privacidade</a> · <a href="https://wa.me/15551234567" target="_blank" style="color:#adb7c4;">Atendimento via WhatsApp</a></p>
+            <p style="font-size:0.75rem; margin-top: 12px;">Aulas online para todo o Brasil · Certificado de conclusão incluso</p>
+        </div>
+    </footer>
+
+    <!-- instruções internas não intrusivas para substituir a foto e número -->
+    <div style="display: none;"> 
+        <!-- DICA DE PERSONALIZAÇÃO: 
+             1) Para alterar a foto do professor, substitua o 'src' da tag img (linha ~260) pelo caminho real da sua imagem. Ex: "meu-rosto.jpg"
+             2) Para mudar o número do WhatsApp, edite o link em 'btn-cta' (linha ~330) colocando o número com DDD e código do país. Ex: https://wa.me/5511999999999
+             3) Cores da bandeira americana já aplicadas de forma minimalista: #002868 (azul), #BF0A30 (vermelho), branco elegante.
+        -->
+    </div>
+</body>
+</html>
